@@ -3,12 +3,14 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
+from crewai import LLM
 
 
 @CrewBase
 class MobilityCrew():
     """Academic Mobility Planning Crew"""
-
+    
+    llm = LLM(model="gpt-4o-mini")
     agents: List[BaseAgent]
     tasks: List[Task]
 
