@@ -1,0 +1,52 @@
+# src/latest_ai_development/config/tasks.yaml
+transcript_analysis_task:
+  description: >
+    Analyze the following student transcript:
+
+    {transcript}
+
+    Identify:
+    - completed subject areas
+    - academic strengths
+    - possible specialization.
+
+  expected_output: >
+    A summary of the student's academic profile and specialization.
+
+  agent: transcript_analyst
+
+
+course_matching_task:
+  description: >
+    Based on the student's academic profile below:
+
+    {transcript}
+
+    Compare it with the following partner university course catalog:
+
+    {course_catalog}
+
+    Recommend courses that match the student's background.
+
+  expected_output: >
+    A list of recommended courses for the student.
+
+  agent: course_matcher
+
+
+mobility_plan_task:
+  description: >
+    Using the recommended courses and transcript below:
+
+    Transcript:
+    {transcript}
+
+    Course catalog:
+    {course_catalog}
+
+    Generate a structured academic mobility plan.
+
+  expected_output: >
+    A structured academic mobility plan with recommended courses and explanation.
+
+  agent: mobility_plan_generator
