@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import yaml
 from pathlib import Path
 from datetime import datetime
+import os; os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 
 from src.latest_ai_development.crew import MobilityCrew
 from dotenv import load_dotenv
