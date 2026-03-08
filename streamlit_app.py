@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("Agg")
 import yaml
 from pathlib import Path
 from datetime import datetime
