@@ -9,7 +9,7 @@ from crewai import LLM
 @CrewBase
 class MobilityCrew():
     """Academic Mobility Planning Crew"""
-    
+
     llm = LLM(model="gpt-4o-mini")
     agents: List[BaseAgent]
     tasks: List[Task]
@@ -18,21 +18,27 @@ class MobilityCrew():
     def transcript_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['transcript_analyst'],
-            verbose=True
+            verbose=True,
+            max_iter=3,
+            allow_delegation=False
         )
 
     @agent
     def course_matcher(self) -> Agent:
         return Agent(
             config=self.agents_config['course_matcher'],
-            verbose=True
+            verbose=True,
+             max_iter=3,
+            allow_delegation=False
         )
 
     @agent
     def mobility_plan_generator(self) -> Agent:
         return Agent(
             config=self.agents_config['mobility_plan_generator'],
-            verbose=True
+            verbose=True,
+             max_iter=3,
+            allow_delegation=False
         )
 
     @task
@@ -62,5 +68,6 @@ class MobilityCrew():
             agents=self.agents,
             tasks=self.tasks,
             process=Process.sequential,
-            verbose=True
+            verbose=True,
+            max_rpm=2
         )
