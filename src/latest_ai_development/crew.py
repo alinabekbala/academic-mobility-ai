@@ -10,7 +10,7 @@ from crewai import LLM
 class MobilityCrew():
     """Academic Mobility Planning Crew"""
 
-    llm = LLM(model="gpt-4o-mini")
+    llm = LLM(model="gemini/gemini-3-flash-preview")
     agents: List[BaseAgent]
     tasks: List[Task]
 
