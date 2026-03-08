@@ -4,13 +4,13 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 from crewai import LLM
-
+import os
 
 @CrewBase
 class MobilityCrew():
     """Academic Mobility Planning Crew"""
 
-    llm = LLM(model="gemini/gemini-3-flash-preview")
+    llm = LLM(model="gemini/gemini-3-flash-preview", api_key=os.getenv("GEMINI_API_KEY"))
     agents: List[BaseAgent]
     tasks: List[Task]
 
