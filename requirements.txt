@@ -1,6 +1,7 @@
-crewai>=0.30
-streamlit>=1.30
-pandas>=2.0
+crewai
+streamlit
+pandas
 matplotlib
-python-dotenv>=1.0
-openai>=1.30
+python-dotenv
+openai
+pyyaml
